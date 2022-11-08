@@ -5,7 +5,19 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <link rel="stylesheet" type="text/css" href="./style.css">
-    <title>정기예금 API</title>
+    <title>정기예금</title>
+    <meta name="Keywords" content="정기예금, 이율, 이자, 대출 이자, 대출금리">
+    <meta name="Description" content="정기예금 정보를 제공합니다.">
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-6VC1FPVMSP"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-6VC1FPVMSP');
+    </script>
 
     <!--
         [D] API 정보
@@ -18,7 +30,7 @@
     <div class="wrap">
         <div class="inner">
 
-            <div class="box_bank">
+            <div class="box_bank" style="display: none">
                 <div class="title">정기예금</div><!-- [D] 금융 상품명 -->
                 <div class="highest_rate">
                     최고 <strong>5.10</strong>%<!-- [D] 최고 우대금리 -->
@@ -81,6 +93,20 @@
 
         </div>
     </div>
+
+    <script>
+        // 금융감독원 오픈 API
+        // http://finlife.fss.or.kr/PageLink.do?link=openapi/detail02&menuId=2000126
+        /*var apiUrl = 'https://cors-anywhere.herokuapp.com/http://finlife.fss.or.kr/finlifeapi/depositProductsSearch.json?auth=9e318125fa055ef370a2e04cfe25c7f9&topFinGrpNo=020000&pageNo=1';
+        fetch(apiUrl).then(response => {
+            return response.json();
+        }).then(data => {
+            // Work with JSON data here
+            console.log(data.result);
+        }).catch(err => {
+            // Do something for an error here
+        });*/
+    </script>
 
 </body>
 </html>

@@ -88,3 +88,13 @@ strong,b{font-weight:normal;}
 .highest_rate strong {
     font-weight: bold;
 }
+
+/* 모바일 해상도 */
+@media (max-width: 800px) {
+    .box_bank {
+        width: 100%;
+    }
+    .box_bank:nth-child(2n) {
+        margin-left: 0;
+    }
+}
