@@ -1,14 +1,6 @@
 <!doctype html>
 <html lang="ko">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="./style.css">
-    <title>정기예금 금리비교</title>
-    <meta name="Keywords" content="정기예금, 이율, 이자, 대출 이자, 대출금리, 금리비교">
-    <meta name="Description" content="정기예금 정보를 제공합니다.">
-
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-6VC1FPVMSP"></script>
     <script>
@@ -18,6 +10,16 @@
 
         gtag('config', 'G-6VC1FPVMSP');
     </script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="./style.css">
+    <title>정기예금 금리비교</title>
+    <meta name="Keywords" content="정기예금, 이율, 이자, 대출 이자, 대출금리, 금리비교">
+    <meta name="Description" content="정기예금 정보를 제공합니다.">
+
+
 
     <!--
         [D] API 정보
@@ -30,7 +32,7 @@
     <div class="wrap">
         <div class="inner">
 
-            <div class="box_bank">
+            <div class="box_bank" style="display: none">
                 <div class="title">정기예금</div><!-- [D] 금융 상품명 -->
                 <div class="highest_rate">
                     최고 <strong>5.10</strong>%<!-- [D] 최고 우대금리 -->
@@ -45,7 +47,7 @@
                 </div>
             </div>
 
-            <div class="box_bank">
+           <!-- <div class="box_bank">
                 <div class="title">JB 1·2·3 정기예금</div>
                 <div class="highest_rate">
                     최고 <strong>5.10</strong>%
@@ -88,11 +90,13 @@
                         <dd>기본 4.77% (12개월)</dd>
                     </dl>
                 </div>
-            </div>
+            </div>-->
 
 
         </div>
     </div>
+
+    <div id="demo"></div>
 
     <script>
         // 금융감독원 오픈 API
@@ -102,7 +106,53 @@
             return response.json();
         }).then(data => {
             // Work with JSON data here
-            console.log(data);
+            //console.log(data.result.baseList.length);
+
+            /*let txt = "";
+            for(i=0; i<data.result.baseList.length; i++){
+
+                //console.log(data.result.baseList[i].fin_prdt_nm)
+
+                txt += data.result.baseList[i].fin_prdt_nm + "<br>";
+            }
+            document.getElementById('demo').innerHTML = txt;*/
+            //console.log(data)
+
+            
+
+            function renderBox(data){
+                let boxData = [];
+
+                /*let dataValues = Object.values(data.result);*/
+                console.log(data.result);
+
+                for (i=0; i<data.result.baseList.length; i++){
+
+                    //console.log(data.result);
+
+
+
+                    boxData.push(`
+                        <div class="box_bank">
+                            <div class="title">${data.result.baseList[i].fin_prdt_nm}</div>
+                             <div class="area_info">
+                                <dl>
+                                    <dt>은행명</dt>
+                                    <dd>${data.result.baseList[i].kor_co_nm}</dd>
+                                    <dt>금리</dt>
+                                    <dd></dd>
+                                </dl>
+                            </div>
+                        </div>
+                    `);
+                }
+                //
+
+                document.querySelector('.wrap > .inner').innerHTML = boxData.join('');
+            }
+            renderBox(data);
+
+            //console.log(data);
         }).catch(err => {
             // Do something for an error here
         });
