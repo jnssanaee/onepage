@@ -31,6 +31,7 @@
 </head>
 <body>
     <div class="wrap">
+        <h1>정기예금 금리비교</h1>
         <div class="inner">
 
             <div class="box_bank" style="display: none">
@@ -95,6 +96,10 @@
 
 
         </div>
+
+        <p class="txt_info">
+            * 금융정보는 금융사 공시를 기초로 한 참고사항이며, 이는 수시로 변경될 수 있으므로, 거래 전 해당 금융사에 확인 바랍니다.
+        </p>
     </div>
 
     <div id="demo"></div>
@@ -102,7 +107,8 @@
     <script>
         // 금융감독원 오픈 API
         // http://finlife.fss.or.kr/PageLink.do?link=openapi/detail02&menuId=2000126
-        var apiUrl = 'https://cors-anywhere.herokuapp.com/http://finlife.fss.or.kr/finlifeapi/depositProductsSearch.json?auth=9e318125fa055ef370a2e04cfe25c7f9&topFinGrpNo=020000&pageNo=1';
+        //var apiUrl = 'https://cors-anywhere.herokuapp.com/http://finlife.fss.or.kr/finlifeapi/depositProductsSearch.json?auth=9e318125fa055ef370a2e04cfe25c7f9&topFinGrpNo=020000&pageNo=1';
+        var apiUrl = './data.json';
         fetch(apiUrl).then(response => {
             return response.json();
         }).then(data => {
@@ -125,9 +131,9 @@
                 let boxData = [];
 
                 /*let dataValues = Object.values(data.result);*/
-                console.log(data.result);
+                console.log(data);
 
-                for (i=0; i<data.result.baseList.length; i++){
+                for (i=0; i<data.length; i++){
 
                     //console.log(data.result);
 
@@ -135,13 +141,13 @@
 
                     boxData.push(`
                         <div class="box_bank">
-                            <div class="title">${data.result.baseList[i].fin_prdt_nm}</div>
+                            <div class="title">${data[i].fin_prdt_nm}</div>
                              <div class="area_info">
                                 <dl>
                                     <dt>은행명</dt>
-                                    <dd>${data.result.baseList[i].kor_co_nm}</dd>
+                                    <dd>${data[i].kor_co_nm}</dd>
                                     <dt>금리</dt>
-                                    <dd></dd>
+                                    <dd><span class="rate">${data[i].intr_rate}%</span> (12개월)</dd>
                                 </dl>
                             </div>
                         </div>
@@ -158,6 +164,8 @@
             // Do something for an error here
         });
     </script>
+
+
 
 </body>
 </html>

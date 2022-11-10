@@ -36,6 +36,16 @@ strong,b{font-weight:normal;}
     display: flex; flex-wrap: wrap; align-items: stretch;
     padding: 15px;
 }
+.wrap h1 {
+    display: table;
+    margin: 20px auto 10px;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 5px 10px;
+    border-radius: 15px;
+    border: 1px solid rgba(107,112,122,0.5);
+    background-color: #f3f6fa;
+}
 .box_bank {
     display: flex;
     position: relative;
@@ -77,6 +87,12 @@ strong,b{font-weight:normal;}
     letter-spacing: -0.21px;
     min-width: auto;
 }
+.box_bank .area_info dd:nth-child(4) {
+    color: red;
+}
+.box_bank .area_info dd .rate {
+    font-weight: bolder;
+}
 .highest_rate {
     position: absolute;
     right: 15px;
@@ -87,6 +103,13 @@ strong,b{font-weight:normal;}
 }
 .highest_rate strong {
     font-weight: bold;
+}
+.txt_info {
+    font-size: 14px;
+    color: #8f8f8f;
+    line-height: 1.5;
+    letter-spacing: -0.3px;
+    margin-top: 10px;
 }
 
 /* 모바일 해상도 */
