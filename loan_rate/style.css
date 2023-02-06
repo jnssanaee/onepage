@@ -160,6 +160,16 @@ li {
     width: 100px;
 }
 .list > li .link a {
+    display: inline-block;
+    color: #424242;
+    height: 30px;
+    line-height: 30px;
+    border: 1px solid #e3e6e8;
+    background: #fafbfc;
+    text-decoration: none;
+    border-radius: 3px;
+}
+.list > li .link a:hover {
     color: blue;
 }
 .list > li .date {
