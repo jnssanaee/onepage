@@ -1,0 +1,170 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+li {
+    list-style: none;
+}
+
+.body {
+    max-width: 1270px;
+    margin: 100px auto 0;
+}
+
+.button {
+    border: 1px solid red;
+}
+
+#header {
+    position: fixed;
+    width: 100%;
+    margin: 0 auto;
+    top: 0;
+    z-index: 2000;
+    height: 60px;
+    background: #fff;
+    z-index: 2001;
+    box-shadow: 0 0 5px rgb(0 0 0 / 25%);
+    display: flex;
+    align-items: center;
+
+    font-size: 24px;
+    font-weight: 700;
+}
+#header .date_today {
+    font-size: 18px;
+    font-weight: 400;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+#header .inner {
+    max-width: 1270px;
+    margin: 0 auto;
+    position: relative;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+.body .tab {
+    margin-bottom: 20px;
+}
+.body .tab a {
+    display: inline-block;
+    font-size: 18px;
+    font-weight: 500;
+    color: #888;
+    letter-spacing: -0.05em;
+    padding: 11px 30px;
+    margin: 0 1px;
+    border-radius: 50px;
+    transition: 0.15s;
+    text-decoration: none;
+}
+.body .tab a.active {
+    background: #000;
+    color: #fff;
+}.body {
+     max-width: 1270px;
+     margin: 100px auto 0;
+ }
+
+.button {
+    border: 1px solid red;
+}
+
+#header {
+    position: fixed;
+    width: 100%;
+    margin: 0 auto;
+    top: 0;
+    z-index: 2000;
+    height: 60px;
+    background: #fff;
+    z-index: 2001;
+    box-shadow: 0 0 5px rgb(0 0 0 / 25%);
+    display: flex;
+    align-items: center;
+
+    font-size: 24px;
+    font-weight: 700;
+}
+#header .date_today {
+    font-size: 18px;
+    font-weight: 400;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+#header .inner {
+    max-width: 1270px;
+    margin: 0 auto;
+    position: relative;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+.body .tab a {
+    display: inline-block;
+    font-size: 18px;
+    font-weight: 500;
+    color: #888;
+    letter-spacing: -0.05em;
+    padding: 11px 30px;
+    margin: 0 1px;
+    border-radius: 50px;
+    transition: 0.15s;
+    text-decoration: none;
+}
+.body .tab a.active {
+    background: #000;
+    color: #fff;
+}
+.list > li {
+    box-shadow: 0 5px 10px rgb(0 0 0 / 10%);
+    display: flex;
+    width: 100%;
+    height: 60px;
+    align-items: center;
+}
+.list > li.tit_row {
+    height: 40px;
+    border-top: 1px solid #ccc;
+}
+.list > li.tit_row span {
+    font-weight: bold;
+}
+.list > li span {
+    text-align: center;
+}
+.list > li + li {
+    margin-top: 10px;
+}
+.list > li .num {
+    width: 80px;
+}
+.list > li .bankname {
+    width: 200px;
+}
+.list > li .rate {
+    width: 200px;
+}
+.list > li .emphasis {
+    font-weight: bold;
+    color: red;
+}
+.list > li .link {
+    width: 100px;
+}
+.list > li .link a {
+    color: blue;
+}
+.list > li .date {
+    width: 150px;
+}
+.list > li .type {
+    width: 150px;
+}
