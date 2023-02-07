@@ -32,41 +32,10 @@ li {
     font-size: 24px;
     font-weight: 700;
 }
-#header .date_today {
-    font-size: 18px;
-    font-weight: 400;
-    position: absolute;
-    left: 0;
-    top: 50%;
-    transform: translateY(-50%);
-}
-#header .inner {
-    max-width: 1270px;
-    margin: 0 auto;
-    position: relative;
-    flex: 1;
-    display: flex;
-    justify-content: center;
-}
 .body .tab {
     margin-bottom: 20px;
 }
-.body .tab a {
-    display: inline-block;
-    font-size: 18px;
-    font-weight: 500;
-    color: #888;
-    letter-spacing: -0.05em;
-    padding: 11px 30px;
-    margin: 0 1px;
-    border-radius: 50px;
-    transition: 0.15s;
-    text-decoration: none;
-}
-.body .tab a.active {
-    background: #000;
-    color: #fff;
-}.body {
+.body {
      max-width: 1270px;
      margin: 100px auto 0;
  }
@@ -177,4 +146,33 @@ li {
 }
 .list > li .type {
     width: 150px;
+}
+
+@media (max-width: 600px) {
+    #header {
+        font-size: 18px;
+        height: 50px;
+    }
+    #header .date_today {
+        left: 14px;
+        font-size: 12px;
+    }
+    .body {
+        margin-top: 70px;
+    }
+    .body .tab a {
+        font-size: 14px;
+        padding: 5px 10px
+    }
+    .body .tab {
+        padding-left: 10px;
+    }
+    .list {
+        margin: 0 15px;
+    }
+    .list > li .num,
+    .list > li .link,
+    .list > li .date {
+        display: none;
+    }
 }
