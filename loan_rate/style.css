@@ -40,6 +40,9 @@ table {
     font-size: 24px;
     font-weight: 700;
 }
+#header h1 {
+    font-size: 24px;
+}
 .body .tab {
     margin-bottom: 20px;
 }
@@ -56,6 +59,15 @@ table {
     left: 0;
     top: 50%;
     transform: translateY(-50%);
+}
+#header .link_home {
+    font-size: 18px;
+    font-weight: 400;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    color: blue;
 }
 #header .inner {
     max-width: 1270px;
@@ -150,6 +162,10 @@ table {
     }
     #header .date_today {
         left: 14px;
+        font-size: 12px;
+    }
+    #header .link_home {
+        right: 14px;
         font-size: 12px;
     }
     .body {
